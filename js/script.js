@@ -27,8 +27,18 @@ if (check) {
 
 //-----------SECONDO ESERCIZIO-------------------------------------------------------------------------------------------------------------------
 
-n = Math.random();
-output.innerHTML += "</br>" +  n;
+// genero un numero casuale da 1 a 6 per l'utente e uno per il computer
+nUser = Math.floor(Math.random() * 6) + 1;
+output.innerHTML += "</br>Hai lanciato un dado: il risultato è " + nUser;
 
-nFloored = Math.floor(n * 100) + 1;
-output.innerHTML += "</br>" + nFloored;
+nComputer = Math.floor(Math.random() * 6) + 1;
+output.innerHTML += "</br>Il computer ha lanciato un dado: il risultato è " + nComputer;
+
+// ora verifico quale dei due numeri è più alto e in base al risultato fornisco all'utente un output sul vincitore
+if (nUser > nComputer) {
+    output.innerHTML += "</br>Hai vinto!!";
+} else if (nUser === nComputer) {
+    output.innerHTML += "</br>Pareggio.";
+} else {
+    output.innerHTML += "</br>Hai perso!";
+}
